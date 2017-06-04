@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour {
 
+    public TurrentBlueprint standardTurrent;
+    public TurrentBlueprint missleLauncher;
+
     BuildManager buildmanager;
     void Start()
     {
         buildmanager = BuildManager.instance;
     }
-    public void PurchaseStandardTurrent()
+    public void SelectStandardTurrent()
     {
         Debug.Log("Standard Turrent Selected ");
-        buildmanager.SetTurrentToBuild(buildmanager.standardTurretPrefab);
+        buildmanager.SelectTurrentToBuild(standardTurrent);
     }
-    public void PurchaseMissileLauncher()
+    public void SelectMissileLauncher()
     {
         Debug.Log("Missile Launcher Selected ");
-        buildmanager.SetTurrentToBuild(buildmanager.missileLauncherPrefab);
+        buildmanager.SelectTurrentToBuild(missleLauncher);
     }
 }
